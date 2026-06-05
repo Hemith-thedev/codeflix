@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anta&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@theme {
+  /* Custom Gen-Z Neon Cinematic Brand Token Palette Mapping Matrix */
+
+  /* --- Primary: Neon Cyan Vibes (Cool & Electric) 🌊⚡ --- */
+  --color-primary-50: #ecfeff;
+  --color-primary-100: #cffafe;
+  --color-primary-200: #a5f3fc;
+  --color-primary-300: #67e8f9;
+  --color-primary-400: #22d3ee;
+  --color-primary-500: #06b6d4; /* Base Glow */
+  --color-primary-600: #0891b2;
+  --color-primary-700: #0e7490;
+  --color-primary-800: #155e75;
+  --color-primary-900: #164e63;
+  --color-primary-950: #083344; /* Deep Cyber Midnight */
+
+  /* --- Secondary: Cyber Purple Magic (Romantic Neon) 🦄💜 --- */
+  --color-secondary-50: #faf5ff;
+  --color-secondary-100: #f3e8ff;
+  --color-secondary-200: #e9d5ff;
+  --color-secondary-300: #d8b4fe;
+  --color-secondary-400: #c084fc;
+  --color-secondary-500: #a855f7; /* Heartbeat Pink-Purple */
+  --color-secondary-600: #9333ea;
+  --color-secondary-700: #7e22ce;
+  --color-secondary-800: #6b21a8;
+  --color-secondary-900: #581c87;
+  --color-secondary-950: #3b0764; /* Forbidden Love Dark Mode */
+
+  /* --- Accent: Hot Neon Pink (For that crush-worthy pop!) 💖💥 --- */
+  --color-accent-400: #f472b6;
+  --color-accent-500: #ec4899; /* Pure Eye-Candy */
+  --color-accent-600: #db2777;
+
+  /* --- Cinematic Dark Neutrals (Nee UI background set avali gaa!) 🌌🖤 --- */
+  --color-neutral-900: #0f172a;
+  --color-neutral-950: #020617; /* Ultimate Cinematic Pitch Black */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lexend Deca", monospace;
+  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+pre,
+code {
+  font-family: "consolas", monospace;
+}
+
+.logo {
+  font-size: 1.3rem;
+  text-shadow: 0 0 6px white;
+  cursor: pointer;
+
+  & span {
+    font-family: "consolas", monospace;
+    font-weight: 700;
+    font-style: italic;
+    text-shadow: none;
+    &:hover,
+    &:focus-visible {
+      background-position-x: -100%;
+    }
+  }
+}
+
+body,
+#root {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  height: 100vh;
+  width: 100%;
+  background-color: black;
+  color: white;
+}
+
+.gradient-text {
+  background: linear-gradient(
+    90deg,
+    var(--color-primary-500),
+    var(--color-secondary-500),
+    var(--color-primary-500)
+  );
+  background-size: 200% 100%;
+  background-position-x: 0%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  height: 100svh;
+  width: 100%;
+  overflow-y: auto;
+}

@@ -1,0 +1,89 @@
+.sidebar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  width: 220px;
+  height: 100svh;
+  background-color: #1c1c1c;
+
+  & > .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 1rem;
+    height: 100%;
+    width: 100%;
+    padding: 1rem;
+
+    & > div {
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      align-items: start;
+      gap: 1rem;
+      height: 100%;
+      width: 100%;
+      overflow-y: auto;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      & .divider {
+        display: flex;
+        width: 100%;
+        color: hsl(0, 0%, 22%);
+      }
+    }
+  }
+}
+
+.navigation-dropdown {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 0.5rem;
+  height: fit-content;
+  width: 100%;
+
+  & > button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: fit-content;
+    width: 100%;
+    cursor: pointer;
+
+    & p {
+      &:hover,
+      &:focus-visible {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  & > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 0.5rem;
+    height: fit-content;
+    width: 100%;
+    padding-left: 1rem;
+  }
+}
+
+.navigation-button {
+  cursor: pointer;
+
+  &:hover,
+  &:focus-visible {
+    text-decoration: underline;
+  }
+}
