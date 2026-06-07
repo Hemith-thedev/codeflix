@@ -1,4 +1,10 @@
-import { BrowserRouter, Routes, Route, useLocation, useNavigate } from "react-router-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 
@@ -11,7 +17,7 @@ import Sidebar from "./components/Sidebar";
 function AnimatedRoutes() {
   const location = useLocation();
   const navigate = useNavigate();
-  
+
   // Rendu states maintained: okati animation loading screen ki, inkoti router view dynamic string render key ki!
   const [animationState, setAnimationState] = useState("idle"); // "idle" | "fadingIn" | "fadingOut"
   const [displayLocation, setDisplayLocation] = useState(location);
@@ -22,16 +28,16 @@ function AnimatedRoutes() {
     // URL change direct trigger detect aithe start the block sequence
     if (location.pathname !== displayLocation.pathname) {
       setAnimationState("fadingIn");
-      
+
       // 💡 STEP 1: Wait 500ms untill purple overlay screen completes its fade-in opacity 1 setup!
       const timer = setTimeout(() => {
         // STEP 2: Pure complete black-out overlay time frame lo page change execute! 🎬
         setDisplayLocation(location);
         window.scrollTo({ top: 0, behavior: "instant" });
-        
+
         // STEP 3: Switch state to fade-out clean visibility 🌟
         setAnimationState("fadingOut");
-      }, 500); // Overlay complete animation time 
+      }, 500); // Overlay complete animation time
 
       return () => clearTimeout(timer);
     }
@@ -48,13 +54,13 @@ function AnimatedRoutes() {
   }, [animationState]);
 
   return (
-    <div 
-      className="page" 
-      style={{ 
-        width: "100%", 
-        minHeight: "100vh", 
-        position: "relative", 
-        overflow: "hidden"    
+    <div
+      className="page"
+      style={{
+        width: "100%",
+        minHeight: "100vh",
+        position: "relative",
+        overflow: "hidden",
       }}
     >
       {/* 🔮 Sequential Purple Overlay Screen Pipeline */}
@@ -73,7 +79,7 @@ function AnimatedRoutes() {
               width: "100%",
               height: "100%",
               minHeight: "100vh",
-              zIndex: 50, 
+              zIndex: 50,
               backgroundColor: "black",
               pointerEvents: "all",
             }}

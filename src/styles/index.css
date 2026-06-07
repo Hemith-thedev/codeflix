@@ -258,7 +258,7 @@ form {
 
       &::-webkit-scrollbar {
         background-color: black;
-        border-radius: 2rem
+        border-radius: 2rem;
       }
 
       &::-webkit-scrollbar-thumb {
