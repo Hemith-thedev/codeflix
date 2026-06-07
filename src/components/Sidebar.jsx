@@ -15,11 +15,11 @@ const menuOptions = [
 ];
 
 const SideBarNavLinks = [
-  <NavigationButton
-    linkTo="/"
-    label="Home"
-    type="button"
-  />,
+  <>
+    <NavigationButton label="Home" linkTo="/" />
+    <NavigationButton label="About" linkTo="/about" />
+    <NavigationButton label="Contact" linkTo="/contact" />
+  </>,
   <NavigationButton
     linkTo="/learn"
     type="dropdown"
@@ -33,10 +33,13 @@ export default function Sidebar() {
   return (
     <aside className="sidebar">
       <div className="wrapper">
-        <h1 className="logo">
+        <h3 className="logo">
           {"<"}
-          <span className="gradient-text" onClick={() => navigate("/")}>Codeflix</span> {"/>"}
-        </h1>
+          <span className="gradient-text" onClick={() => navigate("/")}>
+            Codeflix
+          </span>{" "}
+          {"/>"}
+        </h3>
         <div className="sidebar-nav-buttons">
           {SideBarNavLinks.map((button, index) => (
             <React.Fragment key={index}>

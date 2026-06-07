@@ -2,12 +2,15 @@
   position: sticky;
   top: 0;
   left: 0;
+  z-index: 10;
   display: flex;
   justify-content: start;
   align-items: start;
-  width: 220px;
+  width: 100%;
+  max-width: 220px;
   height: 100svh;
-  background-color: #1c1c1c;
+  background-color: #00000099;
+  backdrop-filter: blur(30px);
 
   & > .wrapper {
     display: flex;
@@ -18,6 +21,10 @@
     height: 100%;
     width: 100%;
     padding: 1rem;
+
+    & .logo {
+      font-size: 1.3rem;
+    }
 
     & > div {
       display: flex;
@@ -57,13 +64,18 @@
     align-items: center;
     height: fit-content;
     width: 100%;
-    cursor: pointer;
-
+    
     & p {
+      cursor: pointer;
+      margin-bottom: 0 !important;
       &:hover,
       &:focus-visible {
         text-decoration: underline;
       }
+    }
+    
+    & svg {
+      cursor: pointer;
     }
   }
 
