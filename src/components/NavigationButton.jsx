@@ -47,21 +47,20 @@ const DropdownItem = ({ item }) => {
     }
   }, [location.pathname, isAnyChildActive]);
 
-  useEffect(() => {
-    if (!hasSubOptions) return;
-
-    const handleClickOutside = (event) => {
-      if (itemRef.current && !itemRef.current.contains(event.target)) {
-        // 👉 CRITICAL CHANGE: Okavela active child unte click outside chesina close avvakoodadu! 🙅‍♂️💖
-        if (isAnyChildActive) return; 
+  // useEffect(() => {
+  //   if (!hasSubOptions) return;
+  //   const handleClickOutside = (event) => {
+  //     if (itemRef.current && !itemRef.current.contains(event.target)) {
+  //       // 👉 CRITICAL CHANGE: Okavela active child unte click outside chesina close avvakoodadu! 🙅‍♂️💖
+  //       if (isAnyChildActive) return; 
         
-        setIsSubOpen(false);
-      }
-    };
+  //       setIsSubOpen(false);
+  //     }
+  //   };
 
-    document.addEventListener("click", handleClickOutside);
-    return () => document.removeEventListener("click", handleClickOutside);
-  }, [hasSubOptions, isAnyChildActive]); // Added dependency to get updated active status!
+  //   document.addEventListener("click", handleClickOutside);
+  //   return () => document.removeEventListener("click", handleClickOutside);
+  // }, [hasSubOptions, isAnyChildActive]); // Added dependency to get updated active status!
 
   if (!hasSubOptions) {
     return (

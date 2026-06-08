@@ -24,7 +24,16 @@ const SideBarNavLinks = [
     linkTo="/learn"
     type="dropdown"
     placeholder="Learn"
-    options={[{ label: "HTML", linkTo: "/learn/html" }]}
+    options={[
+      {
+        label: "Technologies",
+        linkTo: "/learn/technologies",
+        options: [
+          { label: "Backend", linkTo: "/learn/technologies/backend" },
+          { label: "Database", linkTo: "/learn/technologies/database" },
+        ],
+      },
+    ]}
   />,
 ];
 

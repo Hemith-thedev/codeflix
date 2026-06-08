@@ -11,7 +11,12 @@ import { useEffect, useState } from "react";
 import HomePage from "./pages/Home";
 import AboutPage from "./pages/About";
 import ContactPage from "./pages/Contact";
-import LearnPage from "./pages/learn/Learn";
+
+import LearnPage from "./pages/learn/Page";
+import TechnologiesIntroFrontendPage from "./pages/learn/subpages/TechnologiesIntroFrontend";
+import TechnologiesBackendPage from "./pages/learn/subpages/TechnologiesBackend";
+import TechnologiesDatabasePage from "./pages/learn/subpages/TechnologiesDatabase";
+
 import Sidebar from "./components/Sidebar";
 
 function AnimatedRoutes() {
@@ -93,6 +98,9 @@ function AnimatedRoutes() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/learn" element={<LearnPage />} />
+        <Route path="/learn/technologies" element={<TechnologiesIntroFrontendPage />} />
+        <Route path="/learn/technologies/backend" element={<TechnologiesBackendPage />} />
+        <Route path="/learn/technologies/database" element={<TechnologiesDatabasePage />} />
       </Routes>
     </div>
   );

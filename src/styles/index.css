@@ -300,3 +300,34 @@ form {
     }
   }
 }
+
+.primary-button {
+  @apply h-fit w-fit p-3 bg-white/10 rounded-xl hover:bg-white hover:text-black hover:shadow-[0_0.5rem_3rem_#ffffff60] cursor-pointer;
+  &.primary-color {
+    @apply h-fit w-fit p-3 bg-primary-500/10 rounded-xl hover:bg-primary-800 hover:text-white hover:shadow-[0_0.5rem_3rem_var(--color-primary-900)] cursor-pointer;
+  }
+  &.secondary-color {
+    @apply h-fit w-fit p-3 bg-secondary-500/10 rounded-xl hover:bg-secondary-800 hover:text-white hover:shadow-[0_0.5rem_3rem_var(--color-secondary-900)] cursor-pointer;
+  }
+  &.violet-color {
+    @apply h-fit w-fit p-3 bg-violet-500/10 rounded-xl hover:bg-violet-800 hover:text-white hover:shadow-[0_0.5rem_3rem_var(--color-violet-900)] cursor-pointer;
+  }
+  &.indigo-color {
+    @apply h-fit w-fit p-3 bg-indigo-500/10 rounded-xl hover:bg-indigo-800 hover:text-white hover:shadow-[0_0.5rem_3rem_var(--color-indigo-900)] cursor-pointer;
+  }
+  &.blue-color {
+    @apply h-fit w-fit p-3 bg-blue-500/10 rounded-xl hover:bg-blue-800 hover:text-white hover:shadow-[0_0.5rem_3rem_var(--color-blue-900)] cursor-pointer;
+  }
+  &.green-color {
+    @apply h-fit w-fit p-3 bg-green-500/10 rounded-xl hover:bg-green-800 hover:text-white hover:shadow-[0_0.5rem_3rem_var(--color-green-900)] cursor-pointer;
+  }
+  &.yellow-color {
+    @apply h-fit w-fit p-3 bg-yellow-500/10 rounded-xl hover:bg-yellow-800 hover:text-white hover:shadow-[0_0.5rem_3rem_var(--color-yellow-900)] cursor-pointer;
+  }
+  &.orange-color {
+    @apply h-fit w-fit p-3 bg-orange-500/10 rounded-xl hover:bg-orange-800 hover:text-white hover:shadow-[0_0.5rem_3rem_var(--color-orange-900)] cursor-pointer;
+  }
+  &.red-color {
+    @apply h-fit w-fit p-3 bg-red-500/10 rounded-xl hover:bg-red-800 hover:text-white hover:shadow-[0_0.5rem_3rem_var(--color-red-900)] cursor-pointer;
+  }
+}
