@@ -224,7 +224,7 @@ export default function TechnologiesBackendPage() {
             className="primary-button secondary-color"
             onClick={() => navigate("/learn/technologies/database")}
           >
-            Go to Technologies of Databse_
+            Go to Technologies of Database_
           </button>
         </div>
       </section>
