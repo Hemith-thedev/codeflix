@@ -7,7 +7,7 @@
   justify-content: start;
   align-items: start;
   width: 100%;
-  max-width: 220px;
+  max-width: 250px;
   height: 100svh;
   background-color: #00000099;
   backdrop-filter: blur(30px);
@@ -92,6 +92,7 @@
 }
 
 .navigation-button {
+  text-align: left;
   cursor: pointer;
 
   &:hover,

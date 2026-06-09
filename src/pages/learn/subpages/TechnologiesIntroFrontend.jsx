@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useNavigate } from "react-router-dom";
+import Point from "../../../components/Point";
 
 export default function TechnologiesIntroFrontendPage() {
   const navigate = useNavigate();
@@ -28,38 +29,6 @@ export default function TechnologiesIntroFrontendPage() {
       <hr className="text-gray-300 h-0.5 w-full" />
     </section>
   );
-  const Point = ({ serialNo, subject, label }) => {
-    // 1. Single values coding formatting (e.g., HTML, CSS, Server-side Languages -> a.)
-    if (!Array.isArray(label)) {
-      return (
-        <p>
-          {String.fromCharCode(97 + serialNo)}.{" "}
-          <span className="font-semibold">{subject}</span>:{" "}
-          <span className="text-gray-300">{label}</span>
-        </p>
-      );
-    }
-
-    // 2. Deep Nested Lists (e.g., Responsibilities with sub-arrays -> b. sequence pattern)
-    return (
-      <div className="w-full space-y-2">
-        {/* Dynamic Serial marker mapping directly matches 'b.' exactly like your sketch */}
-        <p>
-          {String.fromCharCode(97 + serialNo)}.{" "}
-          <span className="font-semibold">{subject}:</span>
-        </p>
-
-        {/* Inner points switch structure smoothly to standard bullet listings */}
-        <ul className="ml-6! list-disc space-y-2 text-gray-300">
-          {label.map((subItem, subIndex) => (
-            <li key={subIndex}>
-              <p>{subItem}</p>
-            </li>
-          ))}
-        </ul>
-      </div>
-    );
-  };
   const sectionData = [
     {
       title: (
@@ -176,8 +145,12 @@ export default function TechnologiesIntroFrontendPage() {
             <h3 className="text-center">
               <span className="gradient-text">Technologies?</span>
             </h3>
-            <p className="text-center">
+            <p className="text-center mb-0!">
               Let's understand the concept bit-by-bit!
+            </p>
+            <p className="text-center text-gray-500">
+              React.JS <span className="text-white">|</span> Angular{" "}
+              <span className="text-white">|</span> Vue.Js
             </p>
           </div>
         </div>

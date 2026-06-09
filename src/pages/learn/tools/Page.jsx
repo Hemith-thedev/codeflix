@@ -1,12 +1,15 @@
 import React, { useRef } from "react";
-import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useNavigate } from "react-router-dom";
 import Point from "../../../components/Point";
 
-export default function TechnologiesBackendPage() {
+gsap.registerPlugin(ScrollTrigger);
+
+export default function ToolsPage() {
   const navigate = useNavigate();
-  const page = useRef(null);
+  const mainRef = useRef(null);
   useGSAP(
     () => {
       gsap.fromTo(
@@ -22,7 +25,7 @@ export default function TechnologiesBackendPage() {
         },
       );
     },
-    { scope: page },
+    { scope: mainRef },
   );
   const Divider = () => (
     <section className="py-20!">
@@ -33,30 +36,31 @@ export default function TechnologiesBackendPage() {
     {
       title: (
         <span>
-          <span className="gradient-text">Node.js</span>
+          <span className="gradient-text">Version Control</span>
         </span>
       ),
       paragraph:
-        "Node.js is an open-source, cross-platform JavaScript runtime environment that executes JavaScript code outside a web browser, primarily for server-side logic.",
+        "Version control is nothing but storing the files & folders in the cloud, so that the other individuals can use that data in their systems officially.",
       points: {
-        heading: "Key points",
+        heading: "Tools of Version Control",
         subpoints: [
           {
-            subject: "History",
+            subject: "Git",
             sub_subpoints: [
-              "Created and developed by 'Ryan Dahl' in 2009.",
-              "Built on top of Google Chrome's V8 JavaScript JavaScript execution engine.",
-              "Governed and maintained globally by the OpenJS Foundation.",
+              "A Command Line Interface used to type commands and execute them for storing options.",
+              "Commands are case sensetive.",
+              "Registration to be don only with commands.",
+              "repositories cannot bee seen, but stored in cloud.",
             ],
           },
           {
-            subject: "Features",
+            subject: "Github",
             sub_subpoints: [
-              "Asynchronous and Event-Driven architecture",
-              "Single-Threaded event loop model with background worker pools",
-              "Non-blocking I/O operations for high concurrent traffic",
-              "NPM (Node Package Manager) ecosystem for library sharing",
-              "Native cross-platform execution (Windows, Linux, macOS)",
+              "A GUI of 'Git' so that the person can store their files and folders in cloud bu using the interactive components.",
+              "URL depends upon your username.",
+              "Registration can be done by sign-up.",
+              "Can manage repositories direcly on cloud.",
+              "Increase productivity & performance by collaborators",
             ],
           },
         ],
@@ -65,52 +69,73 @@ export default function TechnologiesBackendPage() {
     {
       title: (
         <span>
-          <span className="gradient-text">Django</span>
+          <span className="gradient-text">Package Managers</span>
         </span>
       ),
-      paragraph:
-        "Django is a high-level, open-source Python web framework that encourages rapid development and clean, pragmatic architectural design.",
+      paragraph: "<definition>",
       points: {
-        heading: "Key points",
+        heading: "Tools of Package Managers",
         subpoints: [
           {
-            subject: "History",
-            sub_subpoints: [
-              "Created in 2003 by Adrian Holovaty and Simon Willison at a newspaper company.",
-              "Officially released publicly under a BSD license in July 2005.",
-              "Named after the legendary jazz guitarist Django Reinhardt.",
-            ],
+            subject: "npm - node package manager",
+            sub_subpoints: ["<point>"],
           },
           {
-            subject: "Features",
-            sub_subpoints: [
-              "Batteries-Included philosophy providing auth, admin, and ORM tools out-of-the-box",
-              "MVT (Model-View-Template) architectural pattern variant",
-              "Built-in Object-Relational Mapper (ORM) for easy database interaction",
-              "Robust built-in security protections against SQL Injection, XSS, and CSRF",
-              "Automatic, production-ready Admin Graphic Interface generation",
-            ],
+            subject: "pip - Python",
+            sub_subpoints: ["<point>"],
+          },
+          {
+            subject: "Jest / Mocha - Java",
+            sub_subpoints: ["<point>"],
+          },
+        ],
+      },
+    },
+    {
+      title: (
+        <span>
+          <span className="gradient-text">Testing</span>
+        </span>
+      ),
+      paragraph: "<definition>",
+      points: {
+        heading: "Tools of Testing",
+        subpoints: [
+          {
+            subject: "Unit testing - Jest / Mocha",
+            sub_subpoints: ["<point>"],
+          },
+          {
+            subject: "Integration testing - Selenium, Cypress",
+            sub_subpoints: ["<point>"],
+          },
+          {
+            subject: "Jest / Mocha - Java",
+            sub_subpoints: ["<point>"],
           },
         ],
       },
     },
   ];
   return (
-    <main ref={page}>
+    <main ref={mainRef}>
       <section className="hero-section relative">
+        <div className="glow absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-200 flex size-1/4 bg-blue-500 mix-blend-plus-lighter blur-3xl"></div>
         <div className="glow absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 scale-200 flex size-1/4 bg-blue-500 mix-blend-plus-lighter blur-3xl"></div>
-        <div className="glow absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 scale-200 flex size-1/4 bg-secondary-500 mix-blend-plus-lighter blur-3xl"></div>
         <div className="glow absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 scale-200 flex size-1/4 bg-blue-500 mix-blend-plus-lighter blur-3xl"></div>
-        <div className="glow absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2 scale-200 flex size-1/4 bg-secondary-500 mix-blend-plus-lighter blur-3xl"></div>
-        <div className="glow absolute bottom-0 left-0 -translate-x-1/2 translate-y-1/2 scale-200 flex size-1/4 bg-blue-500 mix-blend-plus-lighter blur-3xl"></div>
+        <div className="glow absolute bottom-0 right-1/2 translate-x-1/2 translate-y-1/2 scale-200 flex size-1/4 bg-secondary-500 mix-blend-plus-lighter blur-3xl"></div>
         <div className="glow absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 scale-200 flex size-1/4 bg-secondary-500 mix-blend-plus-lighter blur-3xl"></div>
+        <div className="glow absolute bottom-1/2 right-0 translate-x-1/2 translate-y-1/2 scale-200 flex size-1/4 bg-secondary-500 mix-blend-plus-lighter blur-3xl"></div>
         <div className="wrapper relative">
           <div className="flex flex-col justify-center items-center h-full w-full">
             <h3 className="text-center">
-              <span className="gradient-text">Technologies of Backend</span>
+              <span className="gradient-text">
+                Tools used for Full Stack Apps
+              </span>
             </h3>
             <p className="text-center text-gray-500">
-              Nodes.JS <span className="text-white">|</span> Django
+              Version Control <span className="text-white">|</span> Package
+              Managers <span className="text-white">|</span> Testing Tools
             </p>
           </div>
         </div>
@@ -125,10 +150,10 @@ export default function TechnologiesBackendPage() {
           <ul>
             <li>
               <p className="text-center bg-linear-to-r from-gray-500 to-white bg-clip-text text-transparent">
-                In Full Stack Development, the term '
-                <span className="gradient-text">Technology</span>' refers to the
-                specific Programming language, frameworks, libraries and
-                database used to to complete the FSD Application.
+                <span className="gradient-text">Tools</span> also play a vital
+                role in Full Stack Developemnt. They automate the work easily,
+                store data in cloud or locally and helpful for testing an
+                Application also.
               </p>
             </li>
           </ul>
@@ -138,7 +163,7 @@ export default function TechnologiesBackendPage() {
       <section>
         <div className="wrapper">
           <h1 className="bg-linear-to-r from-white to-primary-500 bg-clip-text text-transparent">
-            Backend
+            Tools used
           </h1>
           {sectionData.map((data, index) => (
             <React.Fragment key={index}>
@@ -188,12 +213,12 @@ export default function TechnologiesBackendPage() {
       <Divider />
       <section>
         <div className="wrapper">
-          <h1 className="gradient-text">Let's move to Databases!</h1>
+          <h1 className="gradient-text">Shall we move to Dev-ops?</h1>
           <button
             className="primary-button secondary-color"
-            onClick={() => navigate("/learn/technologies/database")}
+            onClick={() => navigate("/learn/dev-ops")}
           >
-            Go to Technologies of Database_
+            Go to Dev-ops_
           </button>
         </div>
       </section>

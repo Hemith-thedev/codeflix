@@ -29,10 +29,19 @@ const SideBarNavLinks = [
         label: "Technologies",
         linkTo: "/learn/technologies",
         options: [
+          { label: "Frontend", linkTo: "/learn/technologies" },
           { label: "Backend", linkTo: "/learn/technologies/backend" },
           { label: "Database", linkTo: "/learn/technologies/database" },
         ],
       },
+      {
+        label: "Tools",
+        linkTo: "/learn/tools",
+      },
+      {
+        label: "Dev-ops",
+        linkTo: "/learn/dev-ops",
+      }
     ]}
   />,
 ];

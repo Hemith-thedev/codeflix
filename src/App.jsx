@@ -17,6 +17,10 @@ import TechnologiesIntroFrontendPage from "./pages/learn/subpages/TechnologiesIn
 import TechnologiesBackendPage from "./pages/learn/subpages/TechnologiesBackend";
 import TechnologiesDatabasePage from "./pages/learn/subpages/TechnologiesDatabase";
 
+import ToolsPage from "./pages/learn/tools/Page";
+
+import DevOpsPage from "./pages/learn/devops/Page";
+
 import Sidebar from "./components/Sidebar";
 
 function AnimatedRoutes() {
@@ -98,9 +102,20 @@ function AnimatedRoutes() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/learn" element={<LearnPage />} />
-        <Route path="/learn/technologies" element={<TechnologiesIntroFrontendPage />} />
-        <Route path="/learn/technologies/backend" element={<TechnologiesBackendPage />} />
-        <Route path="/learn/technologies/database" element={<TechnologiesDatabasePage />} />
+        <Route
+          path="/learn/technologies"
+          element={<TechnologiesIntroFrontendPage />}
+        />
+        <Route
+          path="/learn/technologies/backend"
+          element={<TechnologiesBackendPage />}
+        />
+        <Route
+          path="/learn/technologies/database"
+          element={<TechnologiesDatabasePage />}
+        />
+        <Route path="/learn/tools" element={<ToolsPage />} />
+        <Route path="/learn/dev-ops" element={<DevOpsPage />} />
       </Routes>
     </div>
   );

@@ -330,4 +330,7 @@ form {
   &.red-color {
     @apply h-fit w-fit p-3 bg-red-500/10 rounded-xl hover:bg-red-800 hover:text-white hover:shadow-[0_0.5rem_3rem_var(--color-red-900)] cursor-pointer;
   }
+  &.pink-color {
+    @apply h-fit w-fit p-3 bg-pink-500/10 rounded-xl hover:bg-pink-800 hover:text-white hover:shadow-[0_0.5rem_3rem_var(--color-pink-900)] cursor-pointer;
+  }
 }

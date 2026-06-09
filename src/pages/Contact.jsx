@@ -25,9 +25,7 @@ export default function ContactPage() {
       <hr className="text-gray-500 h-0.5 w-full" />
     </section>
   );
-  const Spacer = () => (
-    <div className="flex min-h-10 w-full" />
-  )
+  const Spacer = () => <div className="flex min-h-10 w-full" />;
   return (
     <main ref={page}>
       <section className="relative py-20!">
@@ -60,7 +58,8 @@ export default function ContactPage() {
             </li>
             <li>
               <p className="text-center">
-                Codeflix Localization Engine V1.0 | support.codeflix@gmail.com
+                Codeflix Localization Engine V1.0
+                <span className="text-white">|</span> support.codeflix@gmail.com
               </p>
             </li>
           </ul>
@@ -85,12 +84,25 @@ export default function ContactPage() {
               <p>Message / Feedback</p>
               <textarea name="" id=""></textarea>
             </div>
-            <button type="submit" className="relative" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+            <button
+              type="submit"
+              className="relative"
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+            >
               <p className="mb-0!">Submit</p>
-              <div className={`absolute top-1/2 left-0 -translate-y-1/2 scale-100 flex size-1/2 bg-blue-500 mix-blend-plus-lighter blur-3xl ${isHovered ? "opacity-100" : "opacity-0"}`}></div>
-              <div className={`absolute top-1/2 right-0 -translate-y-1/2 scale-100 flex size-1/2 bg-secondary-500 mix-blend-plus-lighter blur-3xl ${isHovered ? "opacity-100" : "opacity-0"}`}></div>
-              <div className={`absolute top-1/2 left-0 -translate-y-1/2 scale-100 flex size-1/2 bg-blue-500 mix-blend-plus-lighter blur-3xl ${isHovered ? "opacity-100" : "opacity-0"}`}></div>
-              <div className={`absolute top-1/2 right-0 -translate-y-1/2 scale-100 flex size-1/2 bg-secondary-500 mix-blend-plus-lighter blur-3xl ${isHovered ? "opacity-100" : "opacity-0"}`}></div>
+              <div
+                className={`absolute top-1/2 left-0 -translate-y-1/2 scale-100 flex size-1/2 bg-blue-500 mix-blend-plus-lighter blur-3xl ${isHovered ? "opacity-100" : "opacity-0"}`}
+              ></div>
+              <div
+                className={`absolute top-1/2 right-0 -translate-y-1/2 scale-100 flex size-1/2 bg-secondary-500 mix-blend-plus-lighter blur-3xl ${isHovered ? "opacity-100" : "opacity-0"}`}
+              ></div>
+              <div
+                className={`absolute top-1/2 left-0 -translate-y-1/2 scale-100 flex size-1/2 bg-blue-500 mix-blend-plus-lighter blur-3xl ${isHovered ? "opacity-100" : "opacity-0"}`}
+              ></div>
+              <div
+                className={`absolute top-1/2 right-0 -translate-y-1/2 scale-100 flex size-1/2 bg-secondary-500 mix-blend-plus-lighter blur-3xl ${isHovered ? "opacity-100" : "opacity-0"}`}
+              ></div>
             </button>
           </form>
         </div>
