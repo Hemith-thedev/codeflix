@@ -3,6 +3,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useNavigate } from "react-router-dom";
 import Point from "../../../components/Point";
+import Divider from "../../../components/Divider";
 
 export default function TechnologiesBackendPage() {
   const navigate = useNavigate();
@@ -23,11 +24,6 @@ export default function TechnologiesBackendPage() {
       );
     },
     { scope: page },
-  );
-  const Divider = () => (
-    <section className="py-20!">
-      <hr className="text-gray-300 h-0.5 w-full" />
-    </section>
   );
   const sectionData = [
     {
@@ -99,19 +95,17 @@ export default function TechnologiesBackendPage() {
     <main ref={page}>
       <section className="hero-section relative">
         <div className="glow absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 scale-200 flex size-1/4 bg-blue-500 mix-blend-plus-lighter blur-3xl"></div>
-        <div className="glow absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 scale-200 flex size-1/4 bg-secondary-500 mix-blend-plus-lighter blur-3xl"></div>
-        <div className="glow absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 scale-200 flex size-1/4 bg-blue-500 mix-blend-plus-lighter blur-3xl"></div>
-        <div className="glow absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2 scale-200 flex size-1/4 bg-secondary-500 mix-blend-plus-lighter blur-3xl"></div>
-        <div className="glow absolute bottom-0 left-0 -translate-x-1/2 translate-y-1/2 scale-200 flex size-1/4 bg-blue-500 mix-blend-plus-lighter blur-3xl"></div>
+        <div className="glow absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-200 flex size-1/4 bg-blue-500 mix-blend-plus-lighter blur-3xl"></div>
+        <div className="glow absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 scale-200 flex size-1/4 bg-blue-500 mix-blend-plus-lighter blur-3xl"></div>
+        <div className="glow absolute bottom-0 left-0 -translate-x-1/2 translate-y-1/2 scale-200 flex size-1/4 bg-secondary-500 mix-blend-plus-lighter blur-3xl"></div>
+        <div className="glow absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 scale-200 flex size-1/4 bg-secondary-500 mix-blend-plus-lighter blur-3xl"></div>
         <div className="glow absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 scale-200 flex size-1/4 bg-secondary-500 mix-blend-plus-lighter blur-3xl"></div>
         <div className="wrapper relative">
           <div className="flex flex-col justify-center items-center h-full w-full">
             <h3 className="text-center">
               <span className="gradient-text">Technologies of Backend</span>
             </h3>
-            <p className="text-center text-gray-500">
-              Nodes.JS <span className="text-white">|</span> Django
-            </p>
+            <p className="text-center text-gray-500">Nodes.JS | Django</p>
           </div>
         </div>
       </section>

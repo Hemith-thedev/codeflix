@@ -58,8 +58,7 @@ export default function ContactPage() {
             </li>
             <li>
               <p className="text-center">
-                Codeflix Localization Engine V1.0
-                <span className="text-white">|</span> support.codeflix@gmail.com
+                Codeflix Localization Engine V1.0 | support.codeflix@gmail.com
               </p>
             </li>
           </ul>

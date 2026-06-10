@@ -41,9 +41,29 @@ const SideBarNavLinks = [
       {
         label: "Dev-ops",
         linkTo: "/learn/dev-ops",
-      }
+      },
+      {
+        label: "Conclusion",
+        linkTo: "/learn/conclusion",
+      },
     ]}
   />,
+  <NavigationButton
+    linkTo="/html/history"
+    type="dropdown"
+    placeholder="HTML"
+    options={[
+      {
+        label: "History",
+        linkTo: "/html/history",
+        options: [
+          {
+            
+          }
+        ]
+      }
+    ]}
+  />
 ];
 
 export default function Sidebar() {

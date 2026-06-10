@@ -23,7 +23,7 @@ const Point = ({ serialNo, subject, label }) => {
       <ul className="ml-6! space-y-2 text-gray-300">
         {label.map((subItem, subIndex) => (
           <li key={subIndex}>
-            <p><span className="text-white text-shadow-white text-shadow-[0_0_0.2rem,0_0_0.5rem,0_0_1rem] select-none">• </span>{subItem}</p>
+            <p className="point-bullet-text">{subItem}</p>
           </li>
         ))}
       </ul>

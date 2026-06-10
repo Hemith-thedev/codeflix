@@ -15,7 +15,7 @@ const hasActiveChild = (item, currentPath) => {
 const NavigationButtonNavButton = ({ label = "", linkTo = "" }) => {
   const navigate = useNavigate();
   const location = useLocation();
-  const isActive = location.pathname === linkTo;
+  const isActive = location.pathname === linkTo || location.pathname.startsWith(linkTo);
 
   return (
     <button

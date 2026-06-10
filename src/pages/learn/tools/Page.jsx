@@ -4,6 +4,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useNavigate } from "react-router-dom";
 import Point from "../../../components/Point";
+import Divider from "../../../components/Divider";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -27,11 +28,6 @@ export default function ToolsPage() {
     },
     { scope: mainRef },
   );
-  const Divider = () => (
-    <section className="py-20!">
-      <hr className="text-gray-300 h-0.5 w-full" />
-    </section>
-  );
   const sectionData = [
     {
       title: (
@@ -48,19 +44,19 @@ export default function ToolsPage() {
             subject: "Git",
             sub_subpoints: [
               "A Command Line Interface used to type commands and execute them for storing options.",
-              "Commands are case sensetive.",
-              "Registration to be don only with commands.",
-              "repositories cannot bee seen, but stored in cloud.",
+              "Commands are case sensitive.",
+              "Registration to be done only with commands.",
+              "Repositories cannot be seen locally, but stored securely in cloud.",
             ],
           },
           {
             subject: "Github",
             sub_subpoints: [
-              "A GUI of 'Git' so that the person can store their files and folders in cloud bu using the interactive components.",
+              "A GUI of 'Git' so that the person can store their files and folders in cloud by using the interactive components.",
               "URL depends upon your username.",
               "Registration can be done by sign-up.",
-              "Can manage repositories direcly on cloud.",
-              "Increase productivity & performance by collaborators",
+              "Can manage repositories directly on cloud.",
+              "Increase productivity & performance by collaborators.",
             ],
           },
         ],
@@ -72,21 +68,34 @@ export default function ToolsPage() {
           <span className="gradient-text">Package Managers</span>
         </span>
       ),
-      paragraph: "<definition>",
+      paragraph:
+        "Package Managers are tools that automatically manage project dependencies, libraries, and packages to ensure smooth development workflows.",
       points: {
         heading: "Tools of Package Managers",
         subpoints: [
           {
             subject: "npm - node package manager",
-            sub_subpoints: ["<point>"],
+            sub_subpoints: [
+              "Default package manager for Node.js environments.",
+              "Uses package.json to track project configuration and versions.",
+              "Easily installs, updates, and uninstalls open-source libraries via CLI.",
+            ],
           },
           {
             subject: "pip - Python",
-            sub_subpoints: ["<point>"],
+            sub_subpoints: [
+              "The standard package management system used to install and manage software packages written in Python.",
+              "Downloads packages directly from Python Package Index (PyPI).",
+              "Supports requirements.txt for managing team dependencies efficiently.",
+            ],
           },
           {
-            subject: "Jest / Mocha - Java",
-            sub_subpoints: ["<point>"],
+            subject: "Maven / Gradle - Java",
+            sub_subpoints: [
+              "Build automation and dependency management tools specifically designed for Java projects.",
+              "Maven utilizes pom.xml, while Gradle utilizes build.gradle for project setups.",
+              "Downloads and injects required .jar dependencies automatically from central repositories.",
+            ],
           },
         ],
       },
@@ -97,21 +106,34 @@ export default function ToolsPage() {
           <span className="gradient-text">Testing</span>
         </span>
       ),
-      paragraph: "<definition>",
+      paragraph:
+        "Testing is the process of verifying and validating that a software application or code component works exactly as expected without bugs.",
       points: {
         heading: "Tools of Testing",
         subpoints: [
           {
             subject: "Unit testing - Jest / Mocha",
-            sub_subpoints: ["<point>"],
+            sub_subpoints: [
+              "Focuses on isolating and testing individual components or functions in code.",
+              "Jest provides an integrated framework with great mock support for React.",
+              "Ensures low-level functions run correctly before moving to integration stages.",
+            ],
           },
           {
             subject: "Integration testing - Selenium, Cypress",
-            sub_subpoints: ["<point>"],
+            sub_subpoints: [
+              "Tests how different modules, components, or services interact with each other.",
+              "Cypress offers real-time reloading and visual debugging directly inside browsers.",
+              "Ensures data flows smoothly across frontend UI and backend endpoints.",
+            ],
           },
           {
-            subject: "Jest / Mocha - Java",
-            sub_subpoints: ["<point>"],
+            subject: "System Testing / E2E",
+            sub_subpoints: [
+              "Validates the entire software product from end-to-end to ensure the system workflow behaves correctly.",
+              "Simulates real user interactions across all connected pages and interfaces.",
+              "Confirms that the complete system meets business operational standards.",
+            ],
           },
         ],
       },
@@ -134,8 +156,7 @@ export default function ToolsPage() {
               </span>
             </h3>
             <p className="text-center text-gray-500">
-              Version Control <span className="text-white">|</span> Package
-              Managers <span className="text-white">|</span> Testing Tools
+              Version Control | Package Managers | Testing Tools
             </p>
           </div>
         </div>
@@ -150,10 +171,15 @@ export default function ToolsPage() {
           <ul>
             <li>
               <p className="text-center bg-linear-to-r from-gray-500 to-white bg-clip-text text-transparent">
-                <span className="gradient-text">Tools</span> also play a vital
-                role in Full Stack Developemnt. They automate the work easily,
-                store data in cloud or locally and helpful for testing an
-                Application also.
+                Tools of FSD refer to the complete ecosystem of software
+                applications, frameworks, libraries, and utilities that
+                developers use to build both the frontend and backend of a
+                project. These tools streamline the development lifecycle by
+                automating repetitive tasks, managing package dependencies, and
+                tracking source code changes efficiently. Master tools like
+                version control, code environments, and continuous deployment
+                setups are essential to link user interfaces seamlessly with
+                central server structures.
               </p>
             </li>
           </ul>
