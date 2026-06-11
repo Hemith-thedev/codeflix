@@ -13,14 +13,15 @@ import AboutPage from "./pages/About";
 import ContactPage from "./pages/Contact";
 
 import LearnPage from "./pages/learn/Page";
-import TechnologiesIntroFrontendPage from "./pages/learn/subpages/TechnologiesIntroFrontend";
-import TechnologiesBackendPage from "./pages/learn/subpages/TechnologiesBackend";
-import TechnologiesDatabasePage from "./pages/learn/subpages/TechnologiesDatabase";
+import TechnologiesIntroFrontendPage from "./pages/learn/pages/TechnologiesIntroFrontend";
+import TechnologiesBackendPage from "./pages/learn/pages/TechnologiesBackend";
+import TechnologiesDatabasePage from "./pages/learn/pages/TechnologiesDatabase";
 import ToolsPage from "./pages/learn/tools/Page";
 import DevOpsPage from "./pages/learn/devops/Page";
 import ConclusionPage from "./pages/learn/conclusion/Page";
 
 import HTMLPage from "./pages/html/Page";
+import HTMLBasicsPage from "./pages/html/pages/Basics";
 
 import Sidebar from "./components/Sidebar";
 
@@ -118,7 +119,9 @@ function AnimatedRoutes() {
         <Route path="/learn/tools" element={<ToolsPage />} />
         <Route path="/learn/dev-ops" element={<DevOpsPage />} />
         <Route path="/learn/conclusion" element={<ConclusionPage />} />
+
         <Route path="/html/history" element={<HTMLPage />} />
+        <Route path="/html/basics" element={<HTMLBasicsPage />} />
       </Routes>
     </div>
   );

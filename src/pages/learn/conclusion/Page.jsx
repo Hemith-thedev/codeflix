@@ -125,12 +125,12 @@ export default function ConclusionPage() {
       <Divider />
       <section>
         <div className="wrapper">
-          <h1 className="gradient-text">Shall we move to Dev-ops?</h1>
+          <h1 className="bg-linear-to-r from-secondary-500 to-white bg-clip-text text-transparent">Let's learn <span className="gradient-text">HTML</span> first!</h1>
           <button
             className="primary-button secondary-color"
-            onClick={() => navigate("/learn/dev-ops")}
+            onClick={() => navigate("/html/history")}
           >
-            Go to Dev-ops_
+            Go to HTML_
           </button>
         </div>
       </section>

@@ -56,11 +56,10 @@ const SideBarNavLinks = [
       {
         label: "History",
         linkTo: "/html/history",
-        options: [
-          {
-            
-          }
-        ]
+      },
+      {
+        label: "Basics",
+        linkTo: "/html/basics"
       }
     ]}
   />

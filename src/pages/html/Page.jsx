@@ -1,7 +1,9 @@
 import React from "react";
 import Divider from "../../components/Divider";
+import { useNavigate } from "react-router-dom";
 
 export default function HTMLPage() {
+  const navigate = useNavigate();
   const DATA = {
     hero: {
       title: "HTML",
@@ -218,6 +220,19 @@ export default function HTMLPage() {
           </ul>
         </div>
       </section>
+      <Divider />
+      <section>
+        <div className="wrapper">
+          <h1 className="bg-linear-to-r from-secondary-500 to-white bg-clip-text text-transparent">Continue with its Basics</h1>
+          <button
+            className="primary-button secondary-color"
+            onClick={() => navigate("/html/basics")}
+          >
+            Go to HTML Basics_
+          </button>
+        </div>
+      </section>
+      <div className="min-h-10" />
     </main>
   );
 }
