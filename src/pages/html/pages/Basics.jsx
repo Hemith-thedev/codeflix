@@ -123,16 +123,15 @@ export default function HTMLBasicsPage() {
             </li>
             <li>
               <CodeContainer
-                Code={<>
-                  1. &lt;html&gt;&lt;/html&gt;<br />
-                  2. &lt;head&gt;&lt;/head&gt;<br />
-                  3. &lt;body&gt;&lt;/body&gt;
-                </>}
+                Code={`1.<html></html>
+2.<head></head>
+3.<body></body>`}
                 header
                 type={"html"}
                 label={"HTML Tags Examples"}
                 defaultlyOpen
                 showCollapse
+                isCodeGenerating
               />
             </li>
           </ul>
@@ -157,6 +156,48 @@ export default function HTMLBasicsPage() {
                   </li>
                 ))}
               </ul>
+            </li>
+            <li>
+              <CodeContainer
+                Code={`<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Codeflix | Stop Watching, Start compiling!</title>
+    <style>
+      .body {
+        display: flex;
+      }
+      #root {
+        overflow: hidden;
+      }
+      @keyframes {
+        from {
+          opacity: 0%;
+        }
+        to {
+          opacity: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
+`}
+                header
+                type={"html"}
+                label={"HTML Tags Examples"}
+                defaultlyOpen
+                showCollapse
+                showCopy
+                isCodeGenerating
+                speed={50}
+              />
             </li>
           </ul>
         </div>

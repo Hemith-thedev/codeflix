@@ -118,8 +118,10 @@ small,
 }
 
 pre,
-code {
-  font-family: "consolas", monospace;
+code,
+pre span,
+code span {
+  font-family: "consolas", monospace !important;
 }
 
 .logo {
@@ -344,28 +346,88 @@ span.code {
   font-family: "consolas" !important;
 }
 
-.code-container-scrollbar {
-  &::-webkit-scrollbar {
-    background-color: #ffffff00;
-    max-width: 1rem;
+.code-container {
+  --bg: hsl(0, 0%, 7%);
+  --header-bg: hsl(0, 0%, 13%);
+  --selection: hsl(0, 0%, 8%);
+  background-color: var(--bg);
+
+  &.html {
+    --bg: hsl(13, 77%, 3%);
+    --header-bg: hsl(13, 77%, 10%);
+    --selection: hsl(13, 77%, 8%);
+    & span {
+      color: hsl(13, 77%, 90%);
+    }
   }
-  &::-webkit-scrollbar-thumb {
-    background-color: #ffffff20;
-    border-radius: 1rem;
-    border: 0.3rem solid #111;
+  &.css {
+    --bg: hsl(205, 79%, 3%);
+    --header-bg: hsl(205, 79%, 10%);
+    --selection: hsl(205, 79%, 8%);
+    & span {
+      color: hsl(205, 77%, 90%);
+    }
   }
-  &::-webkit-scrollbar-thumb:hover {
-    background-color: #ffffff50;
+  &.js,
+  &.jsx {
+    --bg: hsl(53, 93%, 3%);
+    --header-bg: hsl(53, 93%, 10%);
+    --selection: hsl(53, 93%, 8%);
+    & span {
+      color: hsl(53, 77%, 90%);
+    }
   }
-  &::-webkit-scrollbar-track {
-    margin: 2rem;
+  &.ts,
+  &.tsx {
+    --bg: hsl(211, 60%, 3%);
+    --header-bg: hsl(211, 60%, 10%);
+    --selection: hsl(211, 60%, 8%);
+    & span {
+      color: hsl(211, 77%, 90%);
+    }
   }
-  &::-webkit-scrollbar-corner {
-    display: none;
+  
+  & .header {
+    backdrop-filter: blur(30px);
+    &::before {
+      content: "";
+      z-index: -1;
+      position: absolute;
+      border-radius: 1rem;
+      inset: 0;
+      background-color: var(--header-bg);
+      opacity: 0.3;
+    }
+  }
+  & span {
+    &::selection {
+      background-color: var(--selection);
+    }
+  }
+  & .code-container-scrollbar {
+    &::-webkit-scrollbar {
+      background-color: #ffffff00;
+      max-width: 1rem;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: #ffffff20;
+      border-radius: 1rem;
+      border: 0.3rem solid var(--bg);
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: #ffffff50;
+    }
+    &::-webkit-scrollbar-track {
+      margin: 2rem;
+    }
+    &::-webkit-scrollbar-corner {
+      display: none;
+    }
   }
 }
 
-ul, li {
+ul,
+li {
   height: fit-content;
   width: 100%;
 }
