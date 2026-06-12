@@ -192,7 +192,7 @@ export default function DevOpsPage() {
                         <p className="uppercase">{data.points.heading}</p>
                       </li>
                       <li>
-                        <ul className="ml-4!">
+                        <ul className="pl-4!">
                           {data.points.subpoints.map((subpoint, i) =>
                             Array.isArray(subpoint.sub_subpoints) ? (
                               <Point

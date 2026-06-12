@@ -93,7 +93,7 @@ export default function ConclusionPage() {
                         <p className="uppercase">{data.points.heading}</p>
                       </li>
                       <li>
-                        <ul className="ml-4!">
+                        <ul className="pl-4!">
                           {data.points.subpoints.map((subpoint, i) =>
                             Array.isArray(subpoint.sub_subpoints) ? (
                               <Point
@@ -125,7 +125,9 @@ export default function ConclusionPage() {
       <Divider />
       <section>
         <div className="wrapper">
-          <h1 className="bg-linear-to-r from-secondary-500 to-white bg-clip-text text-transparent">Let's learn <span className="gradient-text">HTML</span> first!</h1>
+          <h1 className="bg-linear-to-r from-secondary-500 to-white bg-clip-text text-transparent">
+            Let's learn <span className="gradient-text">HTML</span> first!
+          </h1>
           <button
             className="primary-button secondary-color"
             onClick={() => navigate("/html/history")}

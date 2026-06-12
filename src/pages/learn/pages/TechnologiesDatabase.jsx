@@ -94,7 +94,7 @@ export default function TechnologiesDatabasePage() {
   return (
     <main ref={page}>
       <section className="hero-section relative">
-       <div className="glow absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 scale-200 flex size-1/4 bg-blue-500 mix-blend-plus-lighter blur-3xl"></div>
+        <div className="glow absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 scale-200 flex size-1/4 bg-blue-500 mix-blend-plus-lighter blur-3xl"></div>
         <div className="glow absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-200 flex size-1/4 bg-blue-500 mix-blend-plus-lighter blur-3xl"></div>
         <div className="glow absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 scale-200 flex size-1/4 bg-blue-500 mix-blend-plus-lighter blur-3xl"></div>
         <div className="glow absolute bottom-0 left-0 -translate-x-1/2 translate-y-1/2 scale-200 flex size-1/4 bg-secondary-500 mix-blend-plus-lighter blur-3xl"></div>
@@ -150,7 +150,7 @@ export default function TechnologiesDatabasePage() {
                         <p className="uppercase">{data.points.heading}</p>
                       </li>
                       <li>
-                        <ul className="ml-4!">
+                        <ul className="pl-4!">
                           {data.points.subpoints.map((subpoint, i) =>
                             Array.isArray(subpoint.sub_subpoints) ? (
                               <Point

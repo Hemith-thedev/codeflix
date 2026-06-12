@@ -16,12 +16,101 @@ const CodeContainer = ({
 }) => {
   const errors = [];
 
-  if (typeof header !== "boolean")
-    errors.push(<span key="e1">The type of 'header' must be 'boolean'.</span>);
-  if (typeof type !== "string")
-    errors.push(<span key="e2">The type of 'type' must be 'string'.</span>);
-  if (typeof label !== "string")
-    errors.push(<span key="e3">The type of 'label' must be 'string'.</span>);
+  if (typeof header !== "boolean") {
+    errors.push(
+      <span>
+        The type of 'header' must be 'boolean', you have passed a '
+        {typeof header}'.
+      </span>,
+    );
+  }
+  if (typeof type !== "string") {
+    errors.push(
+      <span>
+        The type of 'type' must be 'string', you have passed a '{typeof type}'.
+      </span>,
+    );
+  }
+  if (type !== "html" && type !== "css" && type !== "js" && type !== "ts") {
+    errors.push(
+      <span>
+        The value of 'type' must be 'html' / 'css' / 'js' / 'ts', you have
+        passed its value as '{type}'.
+      </span>,
+    );
+  }
+  if (typeof label !== "string") {
+    errors.push(
+      <span>
+        The type of 'label' must be a 'string', you have passed a '
+        {typeof label}'.
+      </span>,
+    );
+  }
+  if (!React.isValidElement(Code) && typeof Code !== "string") {
+    errors.push(
+      <span>
+        The type of 'Code' must be a valid React element or string snippet, you
+        have passed a '{typeof Code}'.
+      </span>,
+    );
+  }
+  if (!React.isValidElement(Code) && typeof Code !== "string") {
+    errors.push(
+      <span>
+        The value of 'Code' must be a valid React element or string snippet, you
+        have passed a '{Code}'.
+      </span>,
+    );
+  }
+  if (typeof defaultlyOpen !== "boolean") {
+    errors.push(
+      <span>
+        The type of 'defaultlyOpen' must be a 'boolean', but you have passed a '
+        {typeof defaultlyOpen}'.
+      </span>,
+    );
+  }
+  if (defaultlyOpen !== false && defaultlyOpen !== true) {
+    errors.push(
+      <span>
+        The value of 'defaultlyOpen' must be a 'boolean', but you have passed
+        its value as '{defaultlyOpen}'.
+      </span>,
+    );
+  }
+  if (typeof showCollapse !== "boolean") {
+    errors.push(
+      <span>
+        The type of 'showCollapse' must be a 'boolean', but you have passed a '
+        {typeof showCollapse}'.
+      </span>,
+    );
+  }
+  if (typeof showCollapse !== "boolean") {
+    errors.push(
+      <span>
+        The value of 'showCollapse' must be a 'boolean', but you have passed a '
+        {showCollapse}'.
+      </span>,
+    );
+  }
+  if (typeof showCopy !== "boolean") {
+    errors.push(
+      <span>
+        The type of 'showCopy' must be a 'boolean', but you have passed a '
+        {typeof showCopy}'.
+      </span>,
+    );
+  }
+  if (typeof showCopy !== "boolean") {
+    errors.push(
+      <span>
+        The value of 'showCopy' must be a 'boolean', but you have passed a '
+        {showCopy}'.
+      </span>,
+    );
+  }
 
   const [isOpen, setIsOpen] = useState(defaultlyOpen);
   const [isCopying, setIsCopying] = useState(false);
@@ -100,7 +189,18 @@ const CodeContainer = ({
     return null;
   };
 
-  if (errors.length > 0) return <div>Error in Component</div>;
+  if (errors.length > 0) {
+    return (
+      <div className="p-4! bg-red-950 rounded-2xl">
+        <h3 className="text-red-500">Error in CodeContainer Component</h3>
+        {errors.map((e, i) => (
+          <p key={i} className="mb-0! text-red-300">
+            {i + 1}. {e}
+          </p>
+        ))}
+      </div>
+    );
+  }
 
   return (
     <div
@@ -129,11 +229,7 @@ const CodeContainer = ({
             {showCopy && (
               <button onClick={handleCopyAction}>
                 <p className="mb-0! primary-button small">
-                  {isCopying ? (
-                    <LuCopyCheck size={18} />
-                  ) : (
-                    <LuCopy size={18} />
-                  )}
+                  {isCopying ? <LuCopyCheck size={18} /> : <LuCopy size={18} />}
                 </p>
               </button>
             )}

@@ -95,6 +95,21 @@ h3 {
   margin-bottom: 0.5em;
 }
 
+.no-text-resize h1,
+.no-text-resize h2,
+.no-text-resize h3,
+.no-text-resize h4,
+.no-text-resize h5,
+.no-text-resize h6,
+.no-text-resize p,
+.no-text-resize span {
+  font-size: revert;
+  line-height: revert;
+  font-weight: revert;
+  letter-spacing: revert;
+  margin-bottom: revert;
+}
+
 p {
   font-size: var(--text-base);
   line-height: var(--lh-relaxed);
@@ -342,8 +357,9 @@ form {
 }
 
 span.code {
-  @apply p-2 bg-white/10 rounded-md;
+  @apply p-2 bg-white/10 rounded-md text-sm text-slate-300;
   font-family: "consolas" !important;
+  font-weight: 500;
 }
 
 .code-container {
