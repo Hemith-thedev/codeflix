@@ -9,7 +9,7 @@
   width: 100%;
   max-width: 250px;
   height: 100svh;
-  background-color: #00000099;
+  background-color: #000000;
   backdrop-filter: blur(30px);
 
   & > .wrapper {

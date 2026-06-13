@@ -95,19 +95,24 @@ h3 {
   margin-bottom: 0.5em;
 }
 
-.no-text-resize h1,
-.no-text-resize h2,
-.no-text-resize h3,
-.no-text-resize h4,
-.no-text-resize h5,
-.no-text-resize h6,
-.no-text-resize p,
-.no-text-resize span {
+/* Target only elements inside the nested preview container, ignoring the hr box model */
+.output-container.output *:not(hr) {
   font-size: revert;
   line-height: revert;
   font-weight: revert;
   letter-spacing: revert;
   margin-bottom: revert;
+  font-family: initial !important;
+}
+
+/* Give the hr a clean browser-like default layout override */
+.output-container.output hr {
+  display: block !important;
+  width: 100% !important;
+  height: 1px !important;
+  border: 0 !important;
+  /* border-top: 1px solid #ccc !important; The missing default gray line */
+  opacity: 1 !important;
 }
 
 p {
@@ -363,7 +368,7 @@ span.code {
 }
 
 .code-container {
-  --bg: hsl(0, 0%, 7%);
+  --bg: hsl(0, 0%, 3%);
   --header-bg: hsl(0, 0%, 13%);
   --selection: hsl(0, 0%, 8%);
   background-color: var(--bg);

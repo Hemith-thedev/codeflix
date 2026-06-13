@@ -19,7 +19,7 @@ const NavigationButtonNavButton = ({ label = "", linkTo = "" }) => {
 
   return (
     <button
-      className={`navigation-button ${isActive ? "gradient-text" : ""}`}
+      className={`navigation-button ${isActive ? "gradient-text" : ""} swipe-from-left`}
       onClick={() => navigate(linkTo)}
     >
       {label}
@@ -147,7 +147,7 @@ const NavigationButtonDropdown = ({
     >
       <button className="navigation-dropdown-button">
         <p
-          className={`${location.pathname === linkTo ? "gradient-text" : ""}`}
+          className={`${location.pathname === linkTo ? "gradient-text" : ""} swipe-from-left`}
           onClick={() => navigate(linkTo)}
         >
           {placeholder}

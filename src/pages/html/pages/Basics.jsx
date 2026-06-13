@@ -101,39 +101,95 @@ export default function HTMLBasicsPage() {
           "A standard tag consists of three primary parameters configuration:",
         subpoints: [
           {
-            label: "",
-            container: (
-              <CodeContainer
-                header
-                type="html"
-                label="Heading Tags"
-                isCodeGenerating
-                showCollapse={false}
-                showCopy={false}
-                Code={`<h1>h1 - Primary Visual Interface Heading</h1>
+            label: "Headings",
+            type: "html",
+            code: {
+              header: true,
+              label: "",
+              className: "",
+              defaultlyOpen: true,
+              showCollapse: true,
+              showCopy: true,
+              isCodeGenerating: true,
+              display: `<h1>h1 - Primary Visual Interface Heading</h1>
 <h2>h2 - Secondary Section Breakdown Title</h2>
 <h3>h3 - Sub-Section Operational Layout Title</h3>
 <h4>h4 - heading</h4>
 <h5>h5 - heading</h5>
-<h6>h6 - heading</h6>
-`}
-              />
-            ),
-            output: (
-              <CodeOutput
-                className="bg-white rounded-2xl mt-4! border border-black/50 p-3! text-black"
-                Output={
-                  <>
-                    <h1 className="no-text-resize">Primary Visual Interface Heading</h1>
-                    <h2 className="no-text-resize">Secondary Section Breakdown Title</h2>
-                    <h3 className="no-text-resize">Sub-Section Operational Layout Title</h3>
-                    <h4 className="no-text-resize">heading</h4>
-                    <h5 className="no-text-resize">heading</h5>
-                    <h6 className="no-text-resize">heading</h6>
-                  </>
-                }
-              />
-            ),
+<h6>h6 - heading</h6>`,
+            },
+          },
+          {
+            label: "Paragraphs & Formatting",
+            type: "html",
+            code: {
+              header: true,
+              label: "",
+              className: "",
+              defaultlyOpen: true,
+              showCollapse: true,
+              showCopy: false,
+              isCodeGenerating: true,
+              display: `<p>
+  p - Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, debitis. Saepe
+  laudantium nobis modi totam assumenda velit quae dicta accusantium. A, quisquam?
+  Incidunt qui velit sunt assumenda vel exercitationem nostrum!
+</p>
+<!-- prints a paragraph -->
+
+<br /> <!-- jumps to next line -->
+
+<p>
+ p - Lorem ipsum dolor sit amet consectetur adipisicing elit.
+ Repudiandae, debitis. Saepe laudantium nobis modi totam
+ assumenda velit quae dicta accusantium. A, quisquam?
+ Incidunt qui velit sunt assumenda vel exercitationem
+ nostrum!
+</p>
+<!-- prints a paragraph -->
+
+<hr color="red" />
+<!-- displays a horizontal line: red -->
+
+<br /> <!-- jumps to next line -->
+
+<hr color="green" />
+<!-- displays a horizontal line: green -->
+
+<br /> <!-- jumps to next line -->
+
+<hr color="blue" />
+<!-- displays a horizontal line: blue -->`,
+},
+          },
+          {
+            label: "Links & Navigation",
+            type: "html",
+            code: {
+              header: true,
+              label: "",
+              className: "",
+              defaultlyOpen: true,
+              showCollapse: true,
+              showCopy: false,
+              isCodeGenerating: true,
+              display: `<a href="https://www.amazon.in" target="_blank">Amazon</a>
+<a href="https://www.flipkart.com" target="_blank">Flipkart</a>`,
+},
+          },
+          {
+            label: "Media & Resource",
+            type: "html",
+            code: {
+              header: true,
+              label: "",
+              className: "",
+              defaultlyOpen: true,
+              showCollapse: true,
+              showCopy: false,
+              isCodeGenerating: true,
+              display: `<img src="assets/banner-ui.png" alt="Descriptive Interface Graphics Layout" width="800">`,
+},
           },
         ],
       },
@@ -299,10 +355,27 @@ export default function HTMLBasicsPage() {
                       <li key={i}>
                         <ul>
                           <li>
-                            <p>{sp.label}</p>
+                            <h3>{i + 1}. {sp.label}</h3>
                           </li>
-                          <li>{sp.container}</li>
-                          <li>{sp.output}</li>
+                          <li>
+                            <CodeContainer
+                              Code={sp.code.display}
+                              defaultlyOpen={sp.code.defaultlyOpen}
+                              header={sp.code.header}
+                              isCodeGenerating={sp.code.isCodeGenerating}
+                              label={sp.label}
+                              showCollapse={sp.code.showCollapse}
+                              showCopy={sp.code.showCopy}
+                              type={sp.type}
+                            />
+                          </li>
+                          <li className="py-4!">
+                            <CodeOutput
+                              Output={sp.code.display}
+                              type={sp.type}
+                              label={`${sp.label} Output`}
+                            />
+                          </li>
                         </ul>
                       </li>
                     ))}

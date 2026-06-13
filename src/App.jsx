@@ -7,6 +7,8 @@ import {
 } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 import HomePage from "./pages/Home";
 import AboutPage from "./pages/About";
@@ -64,9 +66,15 @@ function AnimatedRoutes() {
     }
   }, [animationState]);
 
+  const isLangauagePages =
+    window.location.pathname.startsWith("/html") ||
+    window.location.pathname.startsWith("/css") ||
+    window.location.pathname.startsWith("/js") ||
+    window.location.pathname.startsWith("/ts");
+
   return (
     <div
-      className="page"
+      className={`page overflow-visible ${isLangauagePages ? "p-0!" : ""}`}
       style={{
         width: "100%",
         minHeight: "100vh",
@@ -74,6 +82,12 @@ function AnimatedRoutes() {
         overflow: "hidden",
       }}
     >
+      {isLangauagePages && (
+        <>
+          <div className="absolute top-0 left-0 -translate-y-1/2 -translate-x-1/2 h-43 w-full bg-primary-500 mix-blend-plus-lighter blur-3xl" />
+          <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 h-43 w-full bg-secondary-500 mix-blend-plus-lighter blur-3xl" />
+        </>
+      )}
       {/* 🔮 Sequential Purple Overlay Screen Pipeline */}
       <AnimatePresence>
         {animationState !== "idle" && (
@@ -128,6 +142,23 @@ function AnimatedRoutes() {
 }
 
 export default function App() {
+  useGSAP(() => {
+    gsap.fromTo(
+      ".swipe-from-left",
+      {
+        x: "-500%",
+        opacity: 0,
+        filter: "blur(30px)",
+      },
+      {
+        x: 0,
+        opacity: 1,
+        filter: "blur(0px)",
+        duration: 0.3,
+        stagger: 0.1,
+      },
+    );
+  });
   return (
     <BrowserRouter>
       <div style={{ display: "flex", width: "100vw", minHeight: "100vh" }}>
