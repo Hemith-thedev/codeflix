@@ -84,8 +84,8 @@ function AnimatedRoutes() {
     >
       {isLangauagePages && (
         <>
-          <div className="absolute top-0 left-0 -translate-y-1/2 -translate-x-1/2 h-43 w-full bg-primary-500 mix-blend-plus-lighter blur-3xl" />
-          <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 h-43 w-full bg-secondary-500 mix-blend-plus-lighter blur-3xl" />
+          <div className="absolute z-20 top-0 left-0 -translate-y-1/2 -translate-x-1/2 h-43 w-full bg-primary-500 mix-blend-plus-lighter blur-3xl" />
+          <div className="absolute z-20 top-0 right-0 -translate-y-1/2 translate-x-1/2 h-43 w-full bg-secondary-500 mix-blend-plus-lighter blur-3xl" />
         </>
       )}
       {/* 🔮 Sequential Purple Overlay Screen Pipeline */}
@@ -113,7 +113,8 @@ function AnimatedRoutes() {
       </AnimatePresence>
 
       {/* 💡 Crucial Twist: standard location context change aagipoyi displayLocation current local sync elements thoti mathrame update avthundi! */}
-      <Routes location={displayLocation} key={displayLocation.pathname}>
+      <div className="z-10 h-full w-full">
+        <Routes location={displayLocation} key={displayLocation.pathname}>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
@@ -137,6 +138,7 @@ function AnimatedRoutes() {
         <Route path="/html/history" element={<HTMLPage />} />
         <Route path="/html/basics" element={<HTMLBasicsPage />} />
       </Routes>
+      </div>
     </div>
   );
 }
