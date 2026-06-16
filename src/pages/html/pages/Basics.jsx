@@ -5,389 +5,201 @@ import CodeContainer from "../../../components/CodeContainer";
 import CodeOutput from "../../../components/CodeOutput";
 
 export default function HTMLBasicsPage() {
-  const DATA = {
-    hero: {
-      title: "Basics of HTML",
-      description:
-        "Every complex web application and stunning user interface begins with a fundamental understanding of core layout patterns. Master the primary syntax rules, functional attributes, and document skeletons that power the modern browser interface. By establishing a robust command over these essential layout mechanics, developers can seamlessly architect highly scalable, accessible, and high-performance digital environments configured for the modern web ecosystem.",
-    },
-    tags: {
-      heading: "Understanding HTML Tags",
-      description: [
-        "In web development, HTML Tags are the fundamental structural components used to interact with and instruct web browsers on how to arrange, format, and render content.",
-        "They act as semantic commands that encapsulate raw data nodes.",
-      ],
-      points: {
-        heading:
-          "A standard tag consists of three primary parameters configuration:",
-        subpoints: [
-          {
-            subject: (
-              <span>
-                Open Tag <span className="code">{"<"}</span>
-              </span>
-            ),
-            label:
-              "Signals the browser viewport where an element's structural properties begin.",
-          },
-          {
-            subject: (
-              <span>
-                Tagname <span className="code">{"html"}</span>
-                {" / "}
-                <span className="code">{"head"}</span>
-                {" / "}
-                <span className="code">{"body"}</span>
-              </span>
-            ),
-            label:
-              "The internal text, asset reference, or child node being processed, in simple language a 'tagname'.",
-          },
-          {
-            subject: (
-              <span>
-                Close Tag <span className="code">{">"}</span>
-                {" or "}
-                <span className="code">{"/>"}</span>
-              </span>
-            ),
-            label:
-              "Employs a forward slash identifier to terminate the execution boundary of that specific structural element.",
-          },
-        ],
-      },
-    },
-    boilerplate: {
-      heading: "The Boilerplate",
-      descriptions: [
-        "In computer programming and web development, a Boilerplate (or boilerplate code) refers to sections of code that must be included in many places with little or no alteration.",
-        "It serves as a standardized, reusable foundation template that provides the minimum necessary configuration required for a program, framework, or web page to compile and execute accurately within its environment.",
-      ],
-      points: {
-        heading:
-          "A standard tag consists of three primary parameters configuration:",
-        subpoints: [
-          {
-            subject: (
-              <span>
-                <span className="code">{"<!DOCTYPE html>"}</span>
-              </span>
-            ),
-            label:
-              "Specifies the standard application profile as modern HTML5.",
-          },
-          {
-            subject: <span className="code">{`<html lang="en">`}</span>,
-            label:
-              "The root structural boundary enclosing all operational scripts and viewport parameters.",
-          },
-          {
-            subject: <span className="code">{`<head>`}</span>,
-            label:
-              "Encloses machine-readable configuration metadata, rendering formats, character sets, and reference links.",
-          },
-          {
-            subject: <span className="code">{`<head>`}</span>,
-            label:
-              "The primary operational container hosting the visible textual nodes and multimedia blocks rendered to end-users.",
-          },
-        ],
-      },
-    },
-    basic_components: {
-      heading: "Basic Components of HTML",
-      points: {
-        heading:
-          "A standard tag consists of three primary parameters configuration:",
-        subpoints: [
-          {
-            label: "Headings",
-            type: "html",
-            code: {
-              header: true,
-              label: "",
-              className: "",
-              defaultlyOpen: true,
-              showCollapse: true,
-              showCopy: true,
-              isCodeGenerating: true,
-              display: `<h1>h1 - Primary Visual Interface Heading</h1>
-<h2>h2 - Secondary Section Breakdown Title</h2>
-<h3>h3 - Sub-Section Operational Layout Title</h3>
-<h4>h4 - heading</h4>
-<h5>h5 - heading</h5>
-<h6>h6 - heading</h6>`,
-            },
-          },
-          {
-            label: "Paragraphs & Formatting",
-            type: "html",
-            code: {
-              header: true,
-              label: "",
-              className: "",
-              defaultlyOpen: true,
-              showCollapse: true,
-              showCopy: false,
-              isCodeGenerating: true,
-              display: `<p>
-  p - Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, debitis. Saepe
-  laudantium nobis modi totam assumenda velit quae dicta accusantium. A, quisquam?
-  Incidunt qui velit sunt assumenda vel exercitationem nostrum!
-</p>
-<!-- prints a paragraph -->
-
-<br /> <!-- jumps to next line -->
-
-<p>
- p - Lorem ipsum dolor sit amet consectetur adipisicing elit.
- Repudiandae, debitis. Saepe laudantium nobis modi totam
- assumenda velit quae dicta accusantium. A, quisquam?
- Incidunt qui velit sunt assumenda vel exercitationem
- nostrum!
-</p>
-<!-- prints a paragraph -->
-
-<hr color="red" />
-<!-- displays a horizontal line: red -->
-
-<br /> <!-- jumps to next line -->
-
-<hr color="green" />
-<!-- displays a horizontal line: green -->
-
-<br /> <!-- jumps to next line -->
-
-<hr color="blue" />
-<!-- displays a horizontal line: blue -->`,
-},
-          },
-          {
-            label: "Links & Navigation",
-            type: "html",
-            code: {
-              header: true,
-              label: "",
-              className: "",
-              defaultlyOpen: true,
-              showCollapse: true,
-              showCopy: false,
-              isCodeGenerating: true,
-              display: `<a href="https://www.amazon.in" target="_blank">Amazon</a>
-<a href="https://www.flipkart.com" target="_blank">Flipkart</a>`,
-},
-          },
-          {
-            label: "Media & Resource",
-            type: "html",
-            code: {
-              header: true,
-              label: "",
-              className: "",
-              defaultlyOpen: true,
-              showCollapse: true,
-              showCopy: false,
-              isCodeGenerating: true,
-              display: `<img src="assets/banner-ui.png" alt="Descriptive Interface Graphics Layout" width="800">`,
-},
-          },
-        ],
-      },
-    },
+  const data = {
+    heading: "",
+    descriptions: ["", ""],
   };
   return (
     <main>
       <div className="py-10!" />
       <section>
         <div className="wrapper items-start!">
+          <h1 className="gradient-text">Basics of HTML</h1>
+          <p className="text-gray-300">
+            HTML (HyperText Markup Language) is the standard markup language
+            used to create the structure of web pages. It acts as the backbone
+            of any website, defining elements like headings, paragraphs, images,
+            and links.
+          </p>
+          <CodeContainer
+            Code={`<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSAP Interactive Draggable Boxes</title>
+    <link rel="stylesheet" href="./src/styles/style.css">
+</head>
+<body>
+
+    <h1>GSAP Draggable Interactive Sandbox 🎛️</h1>
+
+    <!-- Boundary element -->
+    <div class="sandbox-container">
+        <div class="box box-1">Box A</div>
+        <div class="box box-2">Box B</div>
+        <div class="box box-3">Box C</div>
+    </div>
+
+    <!-- 1. GSAP Core Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <!-- 2. GSAP Draggable Plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Draggable.min.js"></script>
+
+    <script>
+        // Register the Draggable plugin with core GSAP
+        gsap.registerPlugin(Draggable);
+
+        // Apply drag functionality with options
+        Draggable.create(".box", {
+            bounds: ".sandbox-container", // Prevents boxes from leaving the container box boundary
+            inertia: false,               // Set true if you load GSAP InertiaPlugin
+            edgeResistance: 0.65,         // Adds structural resistance when hits boundaries
+            onDragStart: function() {
+                // Subtle scale up animation when grabbed
+                gsap.to(this.target, { scale: 1.05, duration: 0.2 });
+            },
+            onDragEnd: function() {
+                // Return to normal size when released
+                gsap.to(this.target, { scale: 1, duration: 0.2 });
+            }
+        });
+    </script>
+</body>
+</html>`}
+            type="html"
+            label="HTML - GSAP Draggable Plugin (Sample)"
+            header
+            canCopy={false}
+            isCodeGenerating
+            showCopy={false}
+            showCollapse={false}
+          />
+        </div>
+      </section>
+      <Divider />
+      <section>
+        <div className="wrapper items-start!">
+          <h2 className="bg-linear-to-r from-white to-secondary-500 bg-clip-text text-transparent">
+            The Boilerplate
+          </h2>
+          <p className="text-gray-300">
+            In computer programming and web development, a Boilerplate (or
+            boilerplate code) refers to sections of code that must be included
+            in many places with little or no alteration.
+          </p>
+          <p className="text-gray-300">
+            It serves as a standardized, reusable foundation template that
+            provides the minimum necessary configuration required for a program,
+            framework, or web page to compile and execute accurately within its
+            environment.
+          </p>
+          <h3>The four main elements are...</h3>
           <ul>
             <li>
-              <h1 className="gradient-text w-fit">{DATA.hero.title}</h1>
+              <p className="text-gray-300 point-bullet-text">
+                <span>
+                  <span className="code">&lt;!DOCTYPE html&gt;</span> - Declares
+                  the <span className="underline">document type</span> and
+                  ensures the browser renders the page correctly using the{" "}
+                  <span className="underline">HTML5 standard</span>.
+                </span>
+              </p>
             </li>
             <li>
-              <p className="text-gray-300 mb-0! text-justify">
-                {DATA.hero.description}
+              <p className="text-gray-300 point-bullet-text">
+                <span>
+                  <span className="code">&lt;html&gt;</span> - The{" "}
+                  <span className="underline">root element</span> that encloses
+                  all the content on the page.
+                </span>
+              </p>
+            </li>
+            <li>
+              <p className="text-gray-300 point-bullet-text">
+                <span>
+                  <span className="code">&lt;head&gt;</span> - Contains{" "}
+                  <span className="underline">meta-information</span> about the
+                  document, such as the page title, character encoding, and
+                  links to external stylesheets. This data is{" "}
+                  <span className="underline">not visible</span> on the actual
+                  web page.
+                </span>
+              </p>
+            </li>
+            <li>
+              <p className="text-gray-300 point-bullet-text">
+                <span>
+                  <span className="code">&lt;body&gt;</span> - Contains the{" "}
+                  <span className="underline">visible content</span> of the web
+                  page, including text, images, and hyperlinks.
+                </span>
               </p>
             </li>
           </ul>
-        </div>
-      </section>
-      <Divider />
-      <section>
-        <div className="wrapper">
-          <ul>
-            <li>
-              <h2 className="bg-linear-to-r from-white to-secondary-500 bg-clip-text text-transparent w-fit">
-                {DATA.tags.heading}
-              </h2>
-            </li>
-            <li>
-              <ul>
-                {DATA.tags.description.map((d, i) => (
-                  <li key={i}>
-                    <p className="text-gray-300 point-bullet-text">{d}</p>
-                  </li>
-                ))}
-              </ul>
-            </li>
-            <li>
-              <ul>
-                <li>
-                  <p>{DATA.tags.points.heading}</p>
-                </li>
-                <li>
-                  <ul className="pl-4!">
-                    {DATA.tags.points.subpoints.map((sp, i) => (
-                      <li key={i}>
-                        <Point
-                          key={i}
-                          serialNo={i}
-                          subject={sp.subject}
-                          label={sp.label}
-                        />
-                      </li>
-                    ))}
-                  </ul>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <CodeContainer
-                Code={`1.<html></html>
-2.<head></head>
-3.<body></body>`}
-                header
-                type={"html"}
-                label={"HTML Tags Examples"}
-                defaultlyOpen
-                showCollapse
-                isCodeGenerating
-              />
-            </li>
-          </ul>
-        </div>
-      </section>
-      <Divider />
-      <section>
-        <div className="wrapper">
-          <ul>
-            <li>
-              <h2 className="bg-linear-to-r from-primary-500 to-white bg-clip-text text-transparent w-fit">
-                {DATA.boilerplate.heading}
-              </h2>
-            </li>
-            <li>
-              <ul>
-                {DATA.boilerplate.descriptions.map((d, index) => (
-                  <li key={index}>
-                    <p className="text-gray-300 point-bullet-text text-justify">
-                      {d}
-                    </p>
-                  </li>
-                ))}
-              </ul>
-            </li>
-            <li>
-              <CodeContainer
-                Code={`<!DOCTYPE html>
-<html lang="en">
+          <CodeContainer
+            Code={`<!DOCTYPE html>
+<html>
   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Document Title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
   </head>
   <body>
-      <!-- Visible content structural elements migrate here -->
+    <h1>Hello Buddies!</h1>
   </body>
-</html>
-`}
-                header
-                type={"html"}
-                label={"HTML Tags Examples"}
-                defaultlyOpen
-                showCollapse
-                showCopy
-                isCodeGenerating
-                speed={50}
-              />
-            </li>
-            <li>
-              <ul>
-                <li>
-                  <p className="mt-5!">{DATA.tags.points.heading}</p>
-                </li>
-                <li>
-                  <ul className="pl-4!">
-                    {DATA.boilerplate.points.subpoints.map((sp, i) => (
-                      <li key={i}>
-                        <Point
-                          key={i}
-                          serialNo={i}
-                          subject={sp.subject}
-                          label={sp.label}
-                        />
-                      </li>
-                    ))}
-                  </ul>
-                </li>
-              </ul>
-            </li>
-          </ul>
+</html>`}
+            type="html"
+            label="HTML Boilerplate"
+            header
+            showCollapse={false}
+          />
         </div>
       </section>
       <Divider />
       <section>
         <div className="wrapper">
+          <h2 className="bg-linear-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent">
+            Essential HTML Elements
+          </h2>
+          <h3>1. Tags</h3>
+          <p className="text-gray-300">HTML uses tags in three parts:</p>
           <ul>
             <li>
-              <h2 className="bg-linear-to-r from-secondary-500 to-white bg-clip-text text-transparent w-fit">
-                {DATA.basic_components.heading}
-              </h2>
+              <p className="text-gray-300 point-bullet-text">
+                <span>
+                  <span className="code">{"<"}</span> - open square braces to{" "}
+                  <span className="underline">open</span> the tag
+                </span>
+              </p>
             </li>
             <li>
-              <ul className="pl-4!">
-                <li>
-                  <p className="mt-5!">{DATA.tags.points.heading}</p>
-                </li>
-                <li>
-                  <ul>
-                    {DATA.basic_components.points.subpoints.map((sp, i) => (
-                      <li key={i}>
-                        <ul>
-                          <li>
-                            <h3>{i + 1}. {sp.label}</h3>
-                          </li>
-                          <li>
-                            <CodeContainer
-                              Code={sp.code.display}
-                              defaultlyOpen={sp.code.defaultlyOpen}
-                              header={sp.code.header}
-                              isCodeGenerating={sp.code.isCodeGenerating}
-                              label={sp.label}
-                              showCollapse={sp.code.showCollapse}
-                              showCopy={sp.code.showCopy}
-                              type={sp.type}
-                            />
-                          </li>
-                          <li className="py-4!">
-                            <CodeOutput
-                              Output={sp.code.display}
-                              type={sp.type}
-                              label={`${sp.label} Output`}
-                            />
-                          </li>
-                        </ul>
-                      </li>
-                    ))}
-                  </ul>
-                </li>
-              </ul>
+              <p className="text-gray-300 point-bullet-text">
+                <span>
+                  <span className="code">{"tagname"}</span> - 'tagname' to{" "}
+                  <span className="underline">specify name</span> of the tag
+                </span>
+              </p>
+            </li>
+            <li>
+              <p className="text-gray-300 point-bullet-text">
+                <span>
+                  <span className="code">
+                    {">"} or {"/>"}
+                  </span>{" "}
+                  - closed square braces to{" "}
+                  <span className="underline">close</span> the tag
+                </span>
+              </p>
             </li>
           </ul>
+          <CodeContainer
+            Code={`<tagname></tagname>
+or
+<tagname />`}
+type="html"
+          />
         </div>
-      </section>
-      <section>
-        <div className="wrapper"></div>
       </section>
     </main>
   );

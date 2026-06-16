@@ -13,6 +13,7 @@ const CodeContainer = ({
   showCollapse = true,
   showCopy = true,
   isCodeGenerating = false,
+  canCopy = true
 }) => {
   const errors = [];
 
@@ -133,32 +134,29 @@ const CodeContainer = ({
 
   // ⚡ Typewriter and Dynamic Letters Processing System Hook
   useEffect(() => {
-    if (isCodeGenerating === true) {
-      setDisplayedLetters([]);
-      let currentIndex = 0;
-      const lettersArray = fullTextCode.split("");
+  if (isCodeGenerating === true) {
+    setDisplayedLetters([]);
+    let currentIndex = 0;
+    const lettersArray = fullTextCode.split("");
+    const charsPerTick = 3; // ✨ OKKA SAPUDUKI ENNI CHARACTERS VELLALI ANEDI IDI! (Speed ni batti 3, 5, or 10 pettuko, bangaram)
 
-      const intervalId = setInterval(() => {
-        if (currentIndex < lettersArray.length) {
-          const nextChar = lettersArray[currentIndex];
+    const intervalId = setInterval(() => {
+      if (currentIndex < lettersArray.length) {
+        // Multi-character block extract configuration setup
+        const nextChunk = lettersArray.slice(currentIndex, currentIndex + charsPerTick);
+        
+        setDisplayedLetters((prev) => [...prev, ...nextChunk]);
+        currentIndex += charsPerTick;
+      } else {
+        clearInterval(intervalId);
+      }
+    }, 1); // 1ms chunk updates
 
-          let safeChar = nextChar;
-          if (nextChar === "<") safeChar = "<";
-          if (nextChar === ">") safeChar = ">";
-          if (nextChar === "!") safeChar = "!";
-
-          setDisplayedLetters((prev) => [...prev, safeChar]);
-          currentIndex++;
-        } else {
-          clearInterval(intervalId);
-        }
-      }, 1);
-
-      return () => clearInterval(intervalId);
-    } else {
-      setDisplayedLetters(fullTextCode.split(""));
-    }
-  }, [isCodeGenerating, fullTextCode, isOpen]);
+    return () => clearInterval(intervalId);
+  } else {
+    setDisplayedLetters(fullTextCode.split(""));
+  }
+}, [isCodeGenerating, fullTextCode]);
 
   // 📜 🚀 The Auto Scroll Effect Hook (Triggers execution instantly whenever data letters array appends)
   useEffect(() => {
@@ -244,9 +242,9 @@ const CodeContainer = ({
         >
           <div className="code h-fit rounded-2xl w-fit">
             <pre className="h-fit w-full p-4!">
-              <code className="h-fit w-full text-sm leading-relaxed text-slate-300 whitespace-pre">
+              <code className={`h-fit w-full text-sm leading-relaxed text-slate-300 whitespace-pre ${canCopy ? "select-auto" : "select-none"}`}>
                 {displayedLetters.map((char, index) => (
-                  <span key={index} className="fade-letter">
+                  <span key={index} className="">
                     {char}
                   </span>
                 ))}

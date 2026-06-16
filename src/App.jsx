@@ -66,15 +66,9 @@ function AnimatedRoutes() {
     }
   }, [animationState]);
 
-  const isLangauagePages =
-    window.location.pathname.startsWith("/html") ||
-    window.location.pathname.startsWith("/css") ||
-    window.location.pathname.startsWith("/js") ||
-    window.location.pathname.startsWith("/ts");
-
   return (
     <div
-      className={`page overflow-visible ${isLangauagePages ? "p-0!" : ""}`}
+      className={`page`}
       style={{
         width: "100%",
         minHeight: "100vh",
@@ -82,12 +76,6 @@ function AnimatedRoutes() {
         overflow: "hidden",
       }}
     >
-      {isLangauagePages && (
-        <>
-          <div className="absolute z-20 top-0 left-0 -translate-y-1/2 -translate-x-1/2 h-43 w-full bg-primary-500 mix-blend-plus-lighter blur-3xl" />
-          <div className="absolute z-20 top-0 right-0 -translate-y-1/2 translate-x-1/2 h-43 w-full bg-secondary-500 mix-blend-plus-lighter blur-3xl" />
-        </>
-      )}
       {/* 🔮 Sequential Purple Overlay Screen Pipeline */}
       <AnimatePresence>
         {animationState !== "idle" && (
